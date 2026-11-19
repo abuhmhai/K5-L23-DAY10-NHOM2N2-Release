@@ -1,7 +1,7 @@
 # Nhóm HMH
 
 - Seed luyện tập: 11
-- Repo: https://github.com/abuhmhai/K5-L23-DAY10-NHOMHMH-Release
+- Repo: https://github.com/abuhmhai/K5-L23-DAY10-NHOM2N2-Release
 
 Cột Phần chính ghi phân công của nhóm.
 
