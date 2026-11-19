@@ -9,6 +9,7 @@
 | Điểm làm tròn seed 11 | F1 lỗi luật ≈ 1,0 và F1 tổng ≈ 0,8. Lần tự đo dùng danh sách lỗi luật. |
 | Kết quả seed 11 sau review | 16 lỗi trên 250 ảnh (6,4%). F1 tổng ≈ 0,9, lỗi luật ≈ 1,0, lỗi gán nhãn ≈ 0,8. |
 | Seed kiểm tra bổ sung 22 | 9 lỗi luật, F1 lỗi luật ≈ 1,0 trước review. |
+| Seed kiểm tra 33 / 91 | 12 lỗi luật (seed 33) và 10 lỗi luật (seed 91), F1 lỗi luật ≈ 1,0 (chưa review lỗi nhãn) |
 
 Validator ghép YOLO và panoptic theo tên lớp, IoU và phần pixel của segment nằm trong box. Ngưỡng lọc bất đồng lớp là IoU từ 0,62 và độ phủ mask từ 0,85. Một cặp cùng lớp nghi lệch box khi độ phủ dưới 0,91 và kích thước tương đương. Với nghi thiếu box, ưu tiên segment đủ lớn. Đo nhiễu trên 50 ảnh calib và dùng ảnh giao để kiểm tra từng ứng viên. Các ngưỡng là bộ lọc để mở ảnh, chưa cho biết recall trên đề ẩn.
 
@@ -35,3 +36,9 @@ Phiên bản lấy theo `jobs.csv` vì trường guideline trên ảnh có thể
 ## 6. Xác minh và giới hạn
 
 Validator và truy vết tái tạo được cùng đầu ra trên seed 11. Lô sạch không có lỗi luật. Sau khi Hoàng Minh Hải xác nhận 3 ảnh nghi lỗi nhãn, 2 ảnh sai hash và ảnh minh họa bảo mật, lô chính thức đạt **17 PASS, 0 FAIL** ở bộ kiểm bàn giao. Điểm đề ẩn chưa có.
+
+## 7. Kiểm tra phương án cho đề ẩn
+
+Bổ sung ứng viên cho box dịch nhẹ dù tỷ lệ phủ mask còn cao, segment bị bỏ sót cạnh box đã ghép cho đối tượng khác và segment gộp có hai box đè nhau nhưng vẫn có vùng pixel riêng đủ lớn. Khâu đối chiếu bỏ qua crowd. Kiểm lỗi luật về diện tích vẫn đối chiếu pixel đối với segment thing có đánh dấu crowd.
+
+Kết quả trên dữ liệu luyện tập công khai giữ nguyên lỗi luật của seed 11, 22, 33 và 91 so với trước thay đổi. Chấm riêng 33 và 91 cho F1 lỗi luật làm tròn ≈ 1,0. Lô sạch vẫn có 0 lỗi luật, 0 ứng viên. Hồ sơ đã export của seed 11 tái tạo giống hệt. Chưa có số đo trên đề ẩn.
