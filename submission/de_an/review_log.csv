@@ -1,10 +1,9 @@
 image,type,verdict,note
-img_0009,instance_merge,confirmed,"Hai người đàn ông nằm ngủ chung giường; panoptic gộp cả hai thành một segment person, detection có 2 box person."
-img_0047,category_swap,confirmed,"Ngựa đua lông nâu đen có nài áo trắng trên bãi biển. Detection ghi horse đúng, panoptic ghi cow sai."
-img_0048,class_swap,confirmed,"TV màn hình lớn trên kệ, mèo và tượng gấu ngồi trước. Panoptic ghi tv đúng, detection ghi laptop sai."
-img_0108,instance_merge,confirmed,"Hai người lướt sóng (nữ và nam) cầm ván đi trên bãi biển; panoptic gộp thành một segment person, detection có 2 box."
-img_0118,bbox_drift,confirmed,"Ghế lưới kim loại ở bàn ngoài trời. Box detection lệch lên trên và sang phải, hụt phần dưới và mép trái ghế."
-img_0122,class_swap,confirmed,"Bàn tay người cầm quai kéo lớn trong cửa hàng. Panoptic ghi person đúng, detection ghi baseball glove sai."
-img_0200,bbox_drift,confirmed,"Buồng chuối xanh trên cây chuối, ảnh tối. Box detection lệch lên trên và sang phải so với buồng chuối."
-img_0205,class_swap,confirmed,"Người trượt ván tuyết áo be, quần đen, đeo kính. Panoptic ghi person đúng, detection ghi potted plant sai."
-img_0212,missing_box,confirmed,Chiếc ô sọc nhiều màu do người áo xanh cầm bên lan can; có segment umbrella nhưng không có box detection.
+img_0046,category_swap,confirmed,"Lâm Hoài Kim Ngân (@nganlhk) xem ảnh — Con cừu lông xoăn trắng có sừng cong. Detection ghi sheep đúng, panoptic ghi horse sai."
+img_0065,category_swap,confirmed,"Lâm Hoài Kim Ngân (@nganlhk) xem ảnh — Vali mở nắp chứa đầy sách, có khóa kéo viền vali. Detection ghi suitcase đúng, panoptic ghi handbag là sai."
+img_0132,instance_merge,confirmed,"Đặng Gia Tuấn (@tuandg) xem ảnh — Mask apple phủ hai cụm táo xanh tách rời nhau (trên và dưới, ngăn bởi lớp cam); detection có 2 box apple, mỗi box chứa ~50% mask."
+img_0168,class_swap,confirmed,"Nguyễn Thị Hồng Hạnh (@hanhnth) xem ảnh — Vùng mask là bếp/lò màu đen sau máy xay trên quầy; tủ lạnh trắng nằm bên trái ảnh. Panoptic oven đúng, detection refrigerator sai."
+img_0185,class_swap,confirmed,"Nguyễn Thị Hồng Hạnh (@hanhnth) xem ảnh — Người đang cắn bánh vòng phủ đường bóng (glazed donut). Panoptic donut đúng, detection ghi cake là sai."
+img_0226,class_swap,confirmed,"Hoàng Minh Hải (@haihm) xem ảnh — Ván lướt sóng trắng dài, mũi nhọn, có vây, cạnh người lướt sóng trên con sóng. Panoptic surfboard đúng, detection ghi frisbee sai."
+img_0237,bbox_drift,confirmed,"Tạ Ngọc Huyền Trang (@trangtnh) xem ảnh — Xe ô tô mờ ở nền, sát mép trái ảnh (x=0). Box detection lệch sang phải ~16px, cắt mất phần đầu xe bên trái."
+img_0240,bbox_drift,confirmed,"Tạ Ngọc Huyền Trang (@trangtnh) xem ảnh — Ván trượt tuyết chéo dưới chân người nhảy. Box detection tụt xuống ~13px, hụt đầu ván phía trên và dư khoảng trống bên dưới."

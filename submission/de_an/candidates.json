@@ -1,106 +1,31 @@
 {
   "candidates": [
     {
-      "image": "img_0009",
+      "image": "img_0006",
       "possible_types": [
-        "instance_merge"
+        "class_swap",
+        "category_swap"
       ],
       "segment": {
-        "id": 10717577,
-        "class": "person",
+        "id": 15327264,
+        "class": "bicycle",
         "bounds": [
-          143,
-          66,
-          639,
-          480
+          0,
+          200,
+          181,
+          452
         ],
-        "pixels": 156010
+        "pixels": 34241
       },
       "boxes": [
         {
           "line": 2,
-          "class": "person",
+          "class": "motorcycle",
           "bounds": [
-            142.55968000000001,
-            176.90016,
-            638.9200000000001,
-            480.0
-          ],
-          "iou": 0.732,
-          "mask_coverage": 0.783
-        },
-        {
-          "line": 3,
-          "class": "person",
-          "bounds": [
-            180.53983999999997,
-            66.49008,
-            638.92,
-            238.38
-          ],
-          "iou": 0.384,
-          "mask_coverage": 0.381
-        }
-      ]
-    },
-    {
-      "image": "img_0047",
-      "possible_types": [
-        "class_swap",
-        "category_swap"
-      ],
-      "segment": {
-        "id": 11762892,
-        "class": "cow",
-        "bounds": [
-          283,
-          187,
-          563,
-          355
-        ],
-        "pixels": 15240
-      },
-      "boxes": [
-        {
-          "line": 1,
-          "class": "horse",
-          "bounds": [
-            282.71008,
-            186.29976000000005,
-            564.02016,
-            355.26984
-          ],
-          "iou": 0.99,
-          "mask_coverage": 1.0
-        }
-      ]
-    },
-    {
-      "image": "img_0048",
-      "possible_types": [
-        "class_swap",
-        "category_swap"
-      ],
-      "segment": {
-        "id": 9030677,
-        "class": "tv",
-        "bounds": [
-          129,
-          30,
-          360,
-          184
-        ],
-        "pixels": 28512
-      },
-      "boxes": [
-        {
-          "line": 1,
-          "class": "laptop",
-          "bounds": [
-            128.87,
-            30.149999999999988,
-            360.04999999999995,
-            184.02
+            0.0,
+            199.459935,
+            180.96,
+            451.98990899999995
           ],
           "iou": 0.998,
           "mask_coverage": 1.0
@@ -108,191 +33,334 @@
       ]
     },
     {
-      "image": "img_0108",
+      "image": "img_0009",
       "possible_types": [
-        "instance_merge"
+        "bbox_drift"
       ],
       "segment": {
-        "id": 1169903,
-        "class": "person",
+        "id": 6863066,
+        "class": "chair",
         "bounds": [
-          324,
-          148,
-          447,
-          289
+          338,
+          4,
+          426,
+          76
         ],
-        "pixels": 5636
+        "pixels": 5874
+      },
+      "boxes": [
+        {
+          "line": 9,
+          "class": "chair",
+          "bounds": [
+            332.58709749999997,
+            11.103039999999996,
+            420.3172365,
+            83.0128
+          ],
+          "iou": 0.732,
+          "mask_coverage": 0.843
+        }
+      ]
+    },
+    {
+      "image": "img_0017",
+      "possible_types": [
+        "bbox_drift"
+      ],
+      "segment": {
+        "id": 10395446,
+        "class": "truck",
+        "bounds": [
+          202,
+          168,
+          480,
+          384
+        ],
+        "pixels": 46492
       },
       "boxes": [
         {
           "line": 1,
-          "class": "person",
+          "class": "truck",
           "bounds": [
-            387.71008,
-            148.11007399999997,
-            446.73983999999996,
-            285.41021599999993
+            218.08288,
+            148.06296,
+            467.55424,
+            341.76456
           ],
-          "iou": 0.467,
-          "mask_coverage": 0.492
+          "iou": 0.667,
+          "mask_coverage": 0.837
+        }
+      ]
+    },
+    {
+      "image": "img_0043",
+      "possible_types": [
+        "instance_merge"
+      ],
+      "segment": {
+        "id": 13554114,
+        "class": "dog",
+        "bounds": [
+          34,
+          43,
+          502,
+          422
+        ],
+        "pixels": 46909
+      },
+      "boxes": [
+        {
+          "line": 1,
+          "class": "dog",
+          "bounds": [
+            33.16032000000001,
+            198.97025750000003,
+            309.84000000000003,
+            422.1601685
+          ],
+          "iou": 0.346,
+          "mask_coverage": 0.663
         },
         {
-          "line": 4,
-          "class": "person",
-          "bounds": [
-            323.66976,
-            158.150125,
-            363.34976000000006,
-            288.73014100000006
-          ],
-          "iou": 0.296,
-          "mask_coverage": 0.508
-        }
-      ]
-    },
-    {
-      "image": "img_0118",
-      "possible_types": [
-        "bbox_drift"
-      ],
-      "segment": {
-        "id": 8063202,
-        "class": "chair",
-        "bounds": [
-          47,
-          565,
-          177,
-          633
-        ],
-        "pixels": 7309
-      },
-      "boxes": [
-        {
           "line": 2,
-          "class": "chair",
+          "class": "dog",
           "bounds": [
-            61.699535000000004,
-            548.7049599999999,
-            192.449489,
-            617.5248
+            348.31008,
+            43.249976000000004,
+            502.47008,
+            249.549902
           ],
-          "iou": 0.514,
-          "mask_coverage": 0.739
+          "iou": 0.179,
+          "mask_coverage": 0.337
         }
       ]
     },
     {
-      "image": "img_0122",
+      "image": "img_0092",
       "possible_types": [
         "class_swap",
         "category_swap"
       ],
       "segment": {
-        "id": 12840487,
-        "class": "person",
+        "id": 3616475,
+        "class": "knife",
         "bounds": [
-          400,
-          219,
-          500,
-          370
+          238,
+          251,
+          289,
+          284
         ],
-        "pixels": 8267
+        "pixels": 412
       },
       "boxes": [
         {
           "line": 2,
-          "class": "baseball glove",
+          "class": "fork",
           "bounds": [
-            399.68000000000006,
-            219.15993749999998,
-            500.0,
-            370.1300625
+            237.24992,
+            250.91993150000002,
+            289.45984000000004,
+            284.7498605
           ],
-          "iou": 0.995,
+          "iou": 0.953,
           "mask_coverage": 1.0
         }
       ]
     },
     {
-      "image": "img_0200",
-      "possible_types": [
-        "bbox_drift"
-      ],
-      "segment": {
-        "id": 15074414,
-        "class": "banana",
-        "bounds": [
-          98,
-          98,
-          165,
-          200
-        ],
-        "pixels": 4798
-      },
-      "boxes": [
-        {
-          "line": 4,
-          "class": "banana",
-          "bounds": [
-            107.88267599999999,
-            83.565,
-            174.63252599999998,
-            185.865
-          ],
-          "iou": 0.581,
-          "mask_coverage": 0.84
-        }
-      ]
-    },
-    {
-      "image": "img_0205",
-      "possible_types": [
-        "class_swap",
-        "category_swap"
-      ],
-      "segment": {
-        "id": 2839688,
-        "class": "person",
-        "bounds": [
-          101,
-          84,
-          314,
-          247
-        ],
-        "pixels": 17335
-      },
-      "boxes": [
-        {
-          "line": 3,
-          "class": "potted plant",
-          "bounds": [
-            101.00999999999999,
-            84.419829,
-            313.53999999999996,
-            247.459959
-          ],
-          "iou": 0.992,
-          "mask_coverage": 1.0
-        }
-      ]
-    },
-    {
-      "image": "img_0212",
+      "image": "img_0098",
       "possible_types": [
         "missing_box"
       ],
       "segment": {
-        "id": 13883837,
-        "class": "umbrella",
+        "id": 9036096,
+        "class": "horse",
         "bounds": [
-          68,
-          280,
-          338,
-          567
+          96,
+          262,
+          143,
+          356
         ],
-        "pixels": 41244
+        "pixels": 2988
       },
       "boxes": []
+    },
+    {
+      "image": "img_0130",
+      "possible_types": [
+        "missing_box"
+      ],
+      "segment": {
+        "id": 5578131,
+        "class": "teddy bear",
+        "bounds": [
+          90,
+          104,
+          135,
+          144
+        ],
+        "pixels": 1120
+      },
+      "boxes": []
+    },
+    {
+      "image": "img_0156",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "segment": {
+        "id": 8988239,
+        "class": "motorcycle",
+        "bounds": [
+          512,
+          321,
+          624,
+          384
+        ],
+        "pixels": 3701
+      },
+      "boxes": [
+        {
+          "line": 1,
+          "class": "bicycle",
+          "bounds": [
+            511.49984000000006,
+            321.239997,
+            624.28,
+            384.060087
+          ],
+          "iou": 0.988,
+          "mask_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "image": "img_0157",
+      "possible_types": [
+        "instance_merge"
+      ],
+      "segment": {
+        "id": 10421977,
+        "class": "person",
+        "bounds": [
+          0,
+          102,
+          304,
+          328
+        ],
+        "pixels": 17548
+      },
+      "boxes": [
+        {
+          "line": 5,
+          "class": "person",
+          "bounds": [
+            128.08,
+            206.72007299999999,
+            303.66,
+            328.679991
+          ],
+          "iou": 0.309,
+          "mask_coverage": 0.581
+        },
+        {
+          "line": 6,
+          "class": "person",
+          "bounds": [
+            0.0,
+            101.19986549999997,
+            89.16,
+            243.9100125
+          ],
+          "iou": 0.184,
+          "mask_coverage": 0.419
+        }
+      ]
+    },
+    {
+      "image": "img_0176",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "segment": {
+        "id": 10784972,
+        "class": "apple",
+        "bounds": [
+          12,
+          98,
+          132,
+          162
+        ],
+        "pixels": 5806
+      },
+      "boxes": [
+        {
+          "line": 4,
+          "class": "orange",
+          "bounds": [
+            11.950080000000005,
+            98.10016799999998,
+            132.36992,
+            162.4902
+          ],
+          "iou": 0.987,
+          "mask_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "image": "img_0218",
+      "possible_types": [
+        "missing_box"
+      ],
+      "segment": {
+        "id": 4106572,
+        "class": "person",
+        "bounds": [
+          0,
+          332,
+          50,
+          429
+        ],
+        "pixels": 2350
+      },
+      "boxes": []
+    },
+    {
+      "image": "img_0232",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "segment": {
+        "id": 7929202,
+        "class": "laptop",
+        "bounds": [
+          16,
+          10,
+          155,
+          124
+        ],
+        "pixels": 9405
+      },
+      "boxes": [
+        {
+          "line": 3,
+          "class": "tv",
+          "bounds": [
+            14.110079999999998,
+            10.230198499999997,
+            155.44,
+            124.1000675
+          ],
+          "iou": 0.981,
+          "mask_coverage": 1.0
+        }
+      ]
     }
   ]
 }
