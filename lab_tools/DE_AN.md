@@ -1,4 +1,5 @@
 # Đề ẩn Day 10 — Nhóm HMH
+Phụ trách quy trình & công cụ: Đặng Gia Tuấn (@tuandg)
 
 Mục tiêu là tối đa F1 trên đề ẩn, hoàn thành 4 file bắt buộc và có thời gian kiểm tra commit đã push. Mốc nhóm đang nhắm là nộp trước 19:30, chừa 5 phút dự phòng. Giờ mở đề, hạn và cách tính thưởng theo thông báo giảng viên.
 

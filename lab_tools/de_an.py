@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Prepare the review queue and export the four hidden-round submission files."""
+"""Prepare the review queue and export the four hidden-round submission files.
+Phụ trách: Đặng Gia Tuấn (@tuandg) - Nhóm HMH.
+"""
 from __future__ import annotations
 
 import argparse
