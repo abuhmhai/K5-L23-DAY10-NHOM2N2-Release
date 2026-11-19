@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 image,type,verdict,note
 img_0046,category_swap,confirmed,"Lâm Hoài Kim Ngân (@nganlhk) xem ảnh — Con cừu lông xoăn trắng có sừng cong. Detection ghi sheep đúng, panoptic ghi horse sai."
 img_0065,category_swap,confirmed,"Lâm Hoài Kim Ngân (@nganlhk) xem ảnh — Vali mở nắp chứa đầy sách, có khóa kéo viền vali. Detection ghi suitcase đúng, panoptic ghi handbag là sai."
@@ -7,3 +8,6 @@ img_0185,class_swap,confirmed,"Nguyễn Thị Hồng Hạnh (@hanhnth) xem ảnh
 img_0226,class_swap,confirmed,"Hoàng Minh Hải (@haihm) xem ảnh — Ván lướt sóng trắng dài, mũi nhọn, có vây, cạnh người lướt sóng trên con sóng. Panoptic surfboard đúng, detection ghi frisbee sai."
 img_0237,bbox_drift,confirmed,"Tạ Ngọc Huyền Trang (@trangtnh) xem ảnh — Xe ô tô mờ ở nền, sát mép trái ảnh (x=0). Box detection lệch sang phải ~16px, cắt mất phần đầu xe bên trái."
 img_0240,bbox_drift,confirmed,"Tạ Ngọc Huyền Trang (@trangtnh) xem ảnh — Ván trượt tuyết chéo dưới chân người nhảy. Box detection tụt xuống ~13px, hụt đầu ván phía trên và dư khoảng trống bên dưới."
+=======
+image,type,verdict,note
+>>>>>>> Stashed changes

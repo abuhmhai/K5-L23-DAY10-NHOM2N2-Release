@@ -1,63 +1,31 @@
 {
   "candidates": [
     {
-      "image": "img_0046",
+      "image": "img_0006",
       "possible_types": [
         "class_swap",
         "category_swap"
       ],
       "segment": {
-        "id": 10111629,
-        "class": "horse",
+        "id": 15327264,
+        "class": "bicycle",
         "bounds": [
-          189,
-          157,
-          444,
-          479
+          0,
+          200,
+          181,
+          452
         ],
-        "pixels": 37745
+        "pixels": 34241
       },
       "boxes": [
         {
-          "line": 1,
-          "class": "sheep",
+          "line": 2,
+          "class": "motorcycle",
           "bounds": [
-            187.91008,
-            156.75024,
-            443.99008000000003,
-            478.69008
-          ],
-          "iou": 0.994,
-          "mask_coverage": 1.0
-        }
-      ]
-    },
-    {
-      "image": "img_0065",
-      "possible_types": [
-        "class_swap",
-        "category_swap"
-      ],
-      "segment": {
-        "id": 4960481,
-        "class": "handbag",
-        "bounds": [
-          13,
-          33,
-          621,
-          619
-        ],
-        "pixels": 229627
-      },
-      "boxes": [
-        {
-          "line": 1,
-          "class": "suitcase",
-          "bounds": [
-            12.940159999999992,
-            32.64032000000004,
-            621.29984,
-            619.4300800000001
+            0.0,
+            199.459935,
+            180.96,
+            451.98990899999995
           ],
           "iou": 0.998,
           "mask_coverage": 1.0
@@ -65,203 +33,332 @@
       ]
     },
     {
-      "image": "img_0132",
+      "image": "img_0009",
       "possible_types": [
-        "instance_merge"
+        "bbox_drift"
       ],
       "segment": {
-        "id": 1628219,
-        "class": "apple",
+        "id": 6863066,
+        "class": "chair",
         "bounds": [
-          159,
-          141,
-          269,
-          356
+          338,
+          4,
+          426,
+          76
         ],
-        "pixels": 11215
+        "pixels": 5874
       },
       "boxes": [
         {
-          "line": 3,
-          "class": "apple",
+          "line": 9,
+          "class": "chair",
           "bounds": [
-            158.920182,
-            140.69984,
-            269.68998999999997,
-            225.2496
+            332.58709749999997,
+            11.103039999999996,
+            420.3172365,
+            83.0128
           ],
-          "iou": 0.39,
-          "mask_coverage": 0.502
-        },
-        {
-          "line": 4,
-          "class": "apple",
-          "bounds": [
-            162.95020000000002,
-            270.12032,
-            269.570012,
-            356.30016
-          ],
-          "iou": 0.384,
-          "mask_coverage": 0.498
+          "iou": 0.732,
+          "mask_coverage": 0.843
         }
       ]
     },
     {
-      "image": "img_0168",
+      "image": "img_0017",
       "possible_types": [
-        "class_swap",
-        "category_swap"
+        "bbox_drift"
       ],
       "segment": {
-        "id": 2219617,
-        "class": "oven",
+        "id": 10395446,
+        "class": "truck",
         "bounds": [
+          202,
+          168,
           480,
-          257,
-          626,
-          345
+          384
         ],
-        "pixels": 4358
-      },
-      "boxes": [
-        {
-          "line": 25,
-          "class": "refrigerator",
-          "bounds": [
-            480.17984,
-            257.22983999999997,
-            625.8899200000001,
-            344.95992
-          ],
-          "iou": 0.995,
-          "mask_coverage": 1.0
-        }
-      ]
-    },
-    {
-      "image": "img_0185",
-      "possible_types": [
-        "class_swap",
-        "category_swap"
-      ],
-      "segment": {
-        "id": 10439989,
-        "class": "donut",
-        "bounds": [
-          72,
-          319,
-          284,
-          437
-        ],
-        "pixels": 16726
-      },
-      "boxes": [
-        {
-          "line": 4,
-          "class": "cake",
-          "bounds": [
-            71.55000000000001,
-            319.28,
-            284.39976,
-            437.21024
-          ],
-          "iou": 0.992,
-          "mask_coverage": 1.0
-        }
-      ]
-    },
-    {
-      "image": "img_0226",
-      "possible_types": [
-        "class_swap",
-        "category_swap"
-      ],
-      "segment": {
-        "id": 3094995,
-        "class": "surfboard",
-        "bounds": [
-          297,
-          159,
-          356,
-          191
-        ],
-        "pixels": 1124
-      },
-      "boxes": [
-        {
-          "line": 2,
-          "class": "frisbee",
-          "bounds": [
-            296.85024,
-            158.6200385,
-            356.32992,
-            191.6899075
-          ],
-          "iou": 0.96,
-          "mask_coverage": 1.0
-        }
-      ]
-    },
-    {
-      "image": "img_0237",
-      "possible_types": [
-        "bbox_drift"
-      ],
-      "segment": {
-        "id": 13420834,
-        "class": "car",
-        "bounds": [
-          0,
-          413,
-          75,
-          493
-        ],
-        "pixels": 4222
-      },
-      "boxes": [
-        {
-          "line": 3,
-          "class": "car",
-          "bounds": [
-            16.073347499999993,
-            413.15808000000004,
-            90.78340250000001,
-            492.90784
-          ],
-          "iou": 0.647,
-          "mask_coverage": 0.753
-        }
-      ]
-    },
-    {
-      "image": "img_0240",
-      "possible_types": [
-        "bbox_drift"
-      ],
-      "segment": {
-        "id": 7165409,
-        "class": "snowboard",
-        "bounds": [
-          0,
-          468,
-          231,
-          562
-        ],
-        "pixels": 1737
+        "pixels": 46492
       },
       "boxes": [
         {
           "line": 1,
-          "class": "snowboard",
+          "class": "truck",
           "bounds": [
-            0.00024149999999353855,
-            480.70527999999996,
-            233.45008049999998,
-            574.5152
+            218.08288,
+            148.06296,
+            467.55424,
+            341.76456
           ],
-          "iou": 0.756,
-          "mask_coverage": 0.948
+          "iou": 0.667,
+          "mask_coverage": 0.837
+        }
+      ]
+    },
+    {
+      "image": "img_0043",
+      "possible_types": [
+        "instance_merge"
+      ],
+      "segment": {
+        "id": 13554114,
+        "class": "dog",
+        "bounds": [
+          34,
+          43,
+          502,
+          422
+        ],
+        "pixels": 46909
+      },
+      "boxes": [
+        {
+          "line": 1,
+          "class": "dog",
+          "bounds": [
+            33.16032000000001,
+            198.97025750000003,
+            309.84000000000003,
+            422.1601685
+          ],
+          "iou": 0.346,
+          "mask_coverage": 0.663
+        },
+        {
+          "line": 2,
+          "class": "dog",
+          "bounds": [
+            348.31008,
+            43.249976000000004,
+            502.47008,
+            249.549902
+          ],
+          "iou": 0.179,
+          "mask_coverage": 0.337
+        }
+      ]
+    },
+    {
+      "image": "img_0092",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "segment": {
+        "id": 3616475,
+        "class": "knife",
+        "bounds": [
+          238,
+          251,
+          289,
+          284
+        ],
+        "pixels": 412
+      },
+      "boxes": [
+        {
+          "line": 2,
+          "class": "fork",
+          "bounds": [
+            237.24992,
+            250.91993150000002,
+            289.45984000000004,
+            284.7498605
+          ],
+          "iou": 0.953,
+          "mask_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "image": "img_0098",
+      "possible_types": [
+        "missing_box"
+      ],
+      "segment": {
+        "id": 9036096,
+        "class": "horse",
+        "bounds": [
+          96,
+          262,
+          143,
+          356
+        ],
+        "pixels": 2988
+      },
+      "boxes": []
+    },
+    {
+      "image": "img_0130",
+      "possible_types": [
+        "missing_box"
+      ],
+      "segment": {
+        "id": 5578131,
+        "class": "teddy bear",
+        "bounds": [
+          90,
+          104,
+          135,
+          144
+        ],
+        "pixels": 1120
+      },
+      "boxes": []
+    },
+    {
+      "image": "img_0156",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "segment": {
+        "id": 8988239,
+        "class": "motorcycle",
+        "bounds": [
+          512,
+          321,
+          624,
+          384
+        ],
+        "pixels": 3701
+      },
+      "boxes": [
+        {
+          "line": 1,
+          "class": "bicycle",
+          "bounds": [
+            511.49984000000006,
+            321.239997,
+            624.28,
+            384.060087
+          ],
+          "iou": 0.988,
+          "mask_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "image": "img_0157",
+      "possible_types": [
+        "instance_merge"
+      ],
+      "segment": {
+        "id": 10421977,
+        "class": "person",
+        "bounds": [
+          0,
+          102,
+          304,
+          328
+        ],
+        "pixels": 17548
+      },
+      "boxes": [
+        {
+          "line": 5,
+          "class": "person",
+          "bounds": [
+            128.08,
+            206.72007299999999,
+            303.66,
+            328.679991
+          ],
+          "iou": 0.309,
+          "mask_coverage": 0.581
+        },
+        {
+          "line": 6,
+          "class": "person",
+          "bounds": [
+            0.0,
+            101.19986549999997,
+            89.16,
+            243.9100125
+          ],
+          "iou": 0.184,
+          "mask_coverage": 0.419
+        }
+      ]
+    },
+    {
+      "image": "img_0176",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "segment": {
+        "id": 10784972,
+        "class": "apple",
+        "bounds": [
+          12,
+          98,
+          132,
+          162
+        ],
+        "pixels": 5806
+      },
+      "boxes": [
+        {
+          "line": 4,
+          "class": "orange",
+          "bounds": [
+            11.950080000000005,
+            98.10016799999998,
+            132.36992,
+            162.4902
+          ],
+          "iou": 0.987,
+          "mask_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "image": "img_0218",
+      "possible_types": [
+        "missing_box"
+      ],
+      "segment": {
+        "id": 4106572,
+        "class": "person",
+        "bounds": [
+          0,
+          332,
+          50,
+          429
+        ],
+        "pixels": 2350
+      },
+      "boxes": []
+    },
+    {
+      "image": "img_0232",
+      "possible_types": [
+        "class_swap",
+        "category_swap"
+      ],
+      "segment": {
+        "id": 7929202,
+        "class": "laptop",
+        "bounds": [
+          16,
+          10,
+          155,
+          124
+        ],
+        "pixels": 9405
+      },
+      "boxes": [
+        {
+          "line": 3,
+          "class": "tv",
+          "bounds": [
+            14.110079999999998,
+            10.230198499999997,
+            155.44,
+            124.1000675
+          ],
+          "iou": 0.981,
+          "mask_coverage": 1.0
         }
       ]
     }
