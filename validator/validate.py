@@ -147,6 +147,23 @@ def mask_pixels(runs, bounds):
                for y, start, end in runs if top <= y + 0.5 < bottom)
 
 
+def is_translated(box, segment_bounds, coverage):
+    """Separate translation from a change in box size or occlusion."""
+    comparisons = []
+    for start, end, det_start, det_end in (
+        (segment_bounds[0], segment_bounds[2], box.bounds[0], box.bounds[2]),
+        (segment_bounds[1], segment_bounds[3], box.bounds[1], box.bounds[3]),
+    ):
+        length = end - start
+        if length <= 0 or not 0.88 <= (det_end - det_start) / length <= 1.14:
+            return False
+        leading, trailing = det_start - start, det_end - end
+        comparisons.append(leading * trailing > 0 and
+                           min(abs(leading), abs(trailing)) >= max(3, 0.065 * length))
+    return any(comparisons) and coverage < 0.975
+
+
+
 def cross_check(boxes, segments, runs, image_area):
     segment_bounds = []
     areas = []
@@ -180,25 +197,45 @@ def cross_check(boxes, segments, runs, image_area):
         })
 
     used_segments, used_boxes = set(), set()
+    # Flag displaced boxes of nearly unchanged size before a high IoU hides
+    # them in the same-class matching pass.
+    translated = sorted((p for p in pairs if p.same and p.overlap >= 0.43
+                         and areas[p.s] >= 120
+                         and is_translated(boxes[p.b], segment_bounds[p.s], p.coverage)),
+                        key=lambda p: (p.overlap, p.coverage), reverse=True)
     # Establish strong same-class matches first. A class disagreement is
     # examined only if both objects still need a match.
     strong = sorted((p for p in pairs if p.same and p.overlap >= 0.55 and p.coverage >= 0.94),
                     key=lambda p: (p.overlap, p.coverage), reverse=True)
+    translated_pairs = {(p.s, p.b) for p in translated}
     for p in strong:
+        if ((p.s, p.b) not in translated_pairs
+                and p.s not in used_segments and p.b not in used_boxes):
+            used_segments.add(p.s)
+            used_boxes.add(p.b)
+
+    for p in translated:
         if p.s not in used_segments and p.b not in used_boxes:
+            record(["bbox_drift"], p.s, [p])
             used_segments.add(p.s)
             used_boxes.add(p.b)
 
     for s, segment in enumerate(segments):
+        if s in used_segments:
+            continue
         options = [p for p in pairs if p.s == s and p.same and p.coverage >= 0.17
                    and p.overlap >= 0.10 and p.b not in used_boxes]
         for first, second in combinations(options, 2):
             a, b = boxes[first.b].bounds, boxes[second.b].bounds
             shared = (max(a[0], b[0]), max(a[1], b[1]), min(a[2], b[2]), min(a[3], b[3]))
             common = mask_pixels(runs[segment["id"]], shared) / areas[s]
-            if (s not in used_segments and iou(a, b) <= 0.30
-                    and min(first.coverage, second.coverage) - common >= 0.12
-                    and first.coverage + second.coverage - common >= 0.78):
+            overlap = iou(a, b)
+            exclusive = min(first.coverage, second.coverage) - common
+            combined = first.coverage + second.coverage - common
+            # Overlapping boxes need stronger independent mask support.
+            clean_split = overlap <= 0.30 and exclusive >= 0.12 and combined >= 0.78
+            overlapping_split = overlap <= 0.55 and exclusive >= 0.18 and combined >= 0.90
+            if clean_split or overlapping_split:
                 record(["instance_merge"], s, [first, second])
                 used_segments.add(s)
                 used_boxes.update((first.b, second.b))
@@ -213,8 +250,13 @@ def cross_check(boxes, segments, runs, image_area):
         used_segments.add(p.s)
         used_boxes.add(p.b)
 
-    shifted = sorted((p for p in pairs if p.same and p.overlap >= 0.23),
-                     key=lambda p: (p.overlap, p.coverage), reverse=True)
+    shifted = sorted(
+        (p for p in pairs if p.same and
+         (p.overlap >= 0.23 or
+          (p.overlap >= 0.16 and p.coverage >= 0.14
+           and is_translated(boxes[p.b], segment_bounds[p.s], p.coverage)))),
+        key=lambda p: (p.overlap, p.coverage), reverse=True,
+    )
     for p in shifted:
         if p.s in used_segments or p.b in used_boxes:
             continue
@@ -229,10 +271,16 @@ def cross_check(boxes, segments, runs, image_area):
         if s in used_segments or size < max(140, 0.0015 * image_area):
             continue
         nearby = [p for p in pairs if p.s == s and
-                  ((p.same and (p.overlap >= 0.14 or p.coverage >= 0.48))
+                  ((p.b not in used_boxes and p.same and
+                    (p.overlap >= 0.14 or p.coverage >= 0.48))
+                   or (p.same and (p.overlap >= 0.58 or p.coverage >= 0.78))
                    or (p.overlap >= 0.40 and p.coverage >= 0.65))]
         if not nearby:
-            record(["missing_box"], s, [])
+            # A box already committed to a neighbor is weak evidence that
+            # this separate segment is annotated. Show that box for review.
+            neighbors = sorted((p for p in pairs if p.s == s and p.same),
+                               key=lambda p: (p.overlap, p.coverage), reverse=True)
+            record(["missing_box"], s, neighbors[:1])
     return candidates
 
 
@@ -266,7 +314,7 @@ def validate(delivery, generate_candidates):
             category = categories.get(segment["category_id"])
             if category is None:
                 reasons.add("invalid_category_id")
-            elif category["isthing"] and not segment.get("iscrowd") and segment["id"]:
+            elif category["isthing"] and segment["id"]:
                 things.append({**segment, "name": category["name"]})
         mask_path = delivery.path(item["mask"])
         if "mask" in untrusted:
@@ -278,7 +326,8 @@ def validate(delivery, generate_candidates):
                 if pixels < segment["area"]:
                     reasons.add("thing_overlap")
         if generate_candidates and not reasons:
-            for candidate in cross_check(boxes, things, runs, width * height):
+            individual_things = [segment for segment in things if not segment.get("iscrowd")]
+            for candidate in cross_check(boxes, individual_things, runs, width * height):
                 candidates.append({"image": name, **candidate})
         errors.update((reason, name) for reason in reasons)
     errors.update(("scene_leak", scene) for scene, values in splits.items() if len(values) > 1)
