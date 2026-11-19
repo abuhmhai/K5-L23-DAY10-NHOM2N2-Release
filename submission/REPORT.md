@@ -64,7 +64,7 @@ Cần báo: người gán A01, A03, A04 và người kiểm Q01, Q03 (người c
 
 ## 6. Xác minh và giới hạn
 
-Validator và truy vết tái tạo được cùng đầu ra trên seed 11. Lô sạch không có lỗi luật. Sau khi Hoàng Minh Hải xác nhận 3 ảnh nghi lỗi nhãn, 2 ảnh sai hash và ảnh minh họa bảo mật, lô chính thức đạt **17 PASS, 0 FAIL** ở bộ kiểm bàn giao. Điểm đề ẩn chưa có.
+Validator và truy vết tái tạo được cùng đầu ra trên seed 11. Lô sạch không có lỗi luật. Sau khi Hoàng Minh Hải xác nhận 3 ảnh nghi lỗi nhãn, 2 ảnh sai hash và ảnh minh họa bảo mật, lô chính thức đạt **17 PASS, 0 FAIL** ở bộ kiểm bàn giao. **Đề ẩn** (`lab250_c79be36ae4a1`): validator báo 7 lỗi luật và 8 ứng viên lỗi nhãn; cả 8 được mở ảnh và `confirmed`, nên `errors.json` có 15 lỗi. Truy vết: tier_a 2 ảnh, tier_b 4 ảnh, notify 5 mã. Điểm đề ẩn do giảng viên chấm, nhóm chưa có.
 
 ## 7. Kiểm tra phương án cho đề ẩn
 
