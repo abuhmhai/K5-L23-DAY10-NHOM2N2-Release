@@ -9,6 +9,7 @@
 | Điểm làm tròn seed 11 | F1 lỗi luật ≈ 1,0 và F1 tổng ≈ 0,8. Lần tự đo dùng danh sách lỗi luật. |
 | Kết quả seed 11 sau review | 16 lỗi trên 250 ảnh (6,4%). F1 tổng ≈ 0,9, lỗi luật ≈ 1,0, lỗi gán nhãn ≈ 0,8. |
 | Seed kiểm tra bổ sung 22 | 9 lỗi luật, F1 lỗi luật ≈ 1,0 trước review. |
+| Seed kiểm tra 33 / 91 | 12 lỗi luật (seed 33) và 10 lỗi luật (seed 91), F1 lỗi luật ≈ 1,0 (chưa review lỗi nhãn) |
 
 Validator ghép YOLO và panoptic theo tên lớp, IoU và phần pixel của segment nằm trong box. Ngưỡng lọc bất đồng lớp là IoU từ 0,62 và độ phủ mask từ 0,85. Một cặp cùng lớp nghi lệch box khi độ phủ dưới 0,91 và kích thước tương đương. Với nghi thiếu box, ưu tiên segment đủ lớn. Đo nhiễu trên 50 ảnh calib và dùng ảnh giao để kiểm tra từng ứng viên. Các ngưỡng là bộ lọc để mở ảnh, chưa cho biết recall trên đề ẩn.
 
