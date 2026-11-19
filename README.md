@@ -2,7 +2,7 @@
   <img src="docs/assets/hero.png" alt="Day 10 Lab: Bàn giao dataset và Truy vết" width="100%">
 </p>
 
-# Day 10 Lab — Bàn giao dataset & Truy vết
+# Day 10 Lab — Nhóm HMH
 
 <p align="center">
   <img alt="nhóm" src="https://img.shields.io/badge/lab-nhóm%205–6%20người-0b1f3a">
@@ -64,7 +64,7 @@ flowchart LR
 4. Làm theo **[GUIDE.md](GUIDE.md)** từ **P1**. Đọc trước định dạng lô ở [docs/DELIVERY.md](docs/DELIVERY.md).
 5. Trước khi nộp: `python scripts/check_handover.py --run runs/r<seed>` không còn FAIL.
 
-> **Khi nộp:** đổi dòng tiêu đề này thành `# Day 10 Lab — Nhóm <XX>`. Xem [SUBMISSION.md](SUBMISSION.md).
+> **Nhóm HMH:** dùng seed luyện tập 11. Nếu lô đã được tạo, mở `runs/r11/review.html` và làm theo Pha 2 trong [GUIDE.md](GUIDE.md). Kết quả QC và truy vết nằm trong [báo cáo](submission/REPORT.md).
 
 <details>
 <summary><b>Vì sao không có nhãn gốc để so?</b></summary>
