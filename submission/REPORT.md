@@ -15,7 +15,24 @@ Validator ghép YOLO và panoptic theo tên lớp, IoU và phần pixel của se
 
 ## 2. Vì sao báo hết ứng viên làm F1 giảm?
 
-F1 phụ thuộc vào precision và recall. Hai nguồn nhãn có thể lệch tự nhiên, chẳng hạn vật bị che hoặc cách nhóm instance khác nhau. Codex đưa ra 3 ứng viên ở seed 11. Hoàng Minh Hải (@haihm) đã mở ảnh, xác nhận cả 3 và không bác bỏ ca nào. Việc báo tự động cả hàng đợi có thể tăng số báo thừa ở seed khác, khiến precision và F1 giảm khi số lỗi phát hiện đúng giữ nguyên.
+F1 = trung bình điều hoà của precision và recall. Ứng viên chỉ là chỗ hai nguồn nhãn (YOLO và panoptic) bất đồng; một phần bất đồng là lệch tự nhiên của COCO (vật bị che, crowd, cách tách instance khác nhau), không phải lỗi. Báo hết ứng viên không tăng recall với các lỗi đã bắt được, nhưng mỗi ca lệch tự nhiên thành một báo thừa, làm precision và F1 giảm. Vì vậy chỉ ca đã mở ảnh và `confirmed` mới vào `errors.json`.
+
+**Vì sao ngưỡng của nhóm không gây báo thừa.** Nhóm không dùng IoU bbox đơn thuần mà dùng tỉ lệ pixel mask nằm trong box. Ngưỡng: bất đồng lớp khi IoU ≥ 0,62 và độ phủ mask ≥ 0,85; lệch box khi độ phủ < 0,91 với kích thước tương đương; bỏ qua segment `iscrowd`. Trên lô sạch 50 ảnh (không cài lỗi, khác ảnh luyện tập) các ngưỡng này cho **0 ứng viên**, tức không có lệch tự nhiên nào vượt ngưỡng. Hệ quả:
+- Seed 11: 3 ứng viên, mở ảnh cả 3 đều là lỗi thật (F1 lỗi nhãn ≈ 0,8).
+- Đề ẩn: 8 ứng viên, mở ảnh cả 8 đều là lỗi thật (5 lệch lớp, 1 gộp instance, 2 lệch box — xem bảng dưới).
+
+Vì hàng đợi không có ca lệch tự nhiên nên không có dòng `rejected`. Đánh đổi: ngưỡng chặt có thể bỏ sót lỗi nhỏ (recall), điều nhóm chấp nhận để hàng đợi đủ nhỏ xem hết trong 40 phút.
+
+| Ảnh đề ẩn | Loại | Bên sai (theo ảnh) |
+|---|---|---|
+| img_0046 | category_swap | panoptic ghi horse, ảnh là cừu |
+| img_0065 | category_swap | panoptic ghi handbag, ảnh là vali |
+| img_0132 | instance_merge | 1 segment apple phủ 2 cụm táo/2 box |
+| img_0168 | class_swap | detection ghi refrigerator, vùng là bếp/lò |
+| img_0185 | class_swap | detection ghi cake, ảnh là donut |
+| img_0226 | class_swap | detection ghi frisbee, ảnh là ván lướt sóng |
+| img_0237 | bbox_drift | box lệch phải ~16 px, cắt đầu xe |
+| img_0240 | bbox_drift | box tụt xuống ~13 px, hụt đầu ván |
 
 ## 3. Quyết định và lineage
 
