@@ -36,7 +36,7 @@ Vì hàng đợi không có ca lệch tự nhiên nên không có dòng `rejecte
 
 ## 3. Quyết định và lineage
 
-Release v1 `lab250_1c19fc38201a` có 13/250 lỗi luật theo cách đếm của bài, tương đương 5,2%, vượt ngưỡng 2%. Lineage đã ghi `HOLD`. Truy vấn ảnh hưởng trả về `R-021: affected=True action=review_or_retrain`. Việc thay lô dữ liệu không thay đổi trọng số mô hình đã train. Team AI cần xem xét lại hoặc train lại run bị ảnh hưởng.
+Release v1 `lab250_1c19fc38201a` có 13 lỗi luật trước review (5,2%). Sau review thêm 3 lỗi nhãn đã xác nhận, con số QC chính thức là **16/250 = 6,4%** (khớp `README.txt` của v2), vượt ngưỡng 2%, nên lineage ghi `HOLD`. Truy vấn ảnh hưởng trả về `R-021: affected=True action=review_or_retrain`. Việc thay lô dữ liệu không thay đổi trọng số mô hình đã train. Team AI cần xem xét lại hoặc train lại run bị ảnh hưởng.
 
 Sau review, v1 có **16/250 lỗi (6,4%)** và giữ quyết định `HOLD`. Release `lab250_1c19fc38201a_v2` ghi v1 làm parent, giữ **243 ảnh với 1.683 nhãn detection** và chuyển **7 ảnh** vào hàng đợi xử lý lại. Số liệu lấy từ `errors.json`, `manifest.csv`, `label_summary.csv` và `rework_queue.csv`.
 
