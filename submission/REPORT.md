@@ -50,6 +50,18 @@ Tìm các ảnh có ít nhất một box detection lớp `wine glass` thuộc jo
 
 Phiên bản lấy theo `jobs.csv` vì trường guideline trên ảnh có thể sai và chính là một loại lỗi validator kiểm tra. Điểm truy vết trước review làm tròn ≈ 1,0 cho từng mục.
 
+**Đề ẩn.** Ticket báo model bỏ sót `tennis racket` bị che hoặc ở mép, nêu `scene_421` và `scene_735`. Changelog v1.3 bắt buộc gán box cho `tennis racket` bị che trên 50% hoặc cắt mép; v1.2 cho phép bỏ qua. Job dùng v1.2 theo `jobs.csv`: J01, J02, J03.
+
+| Tầng | Ảnh | Cảnh | Job |
+|---|---|---|---|
+| A | img_0018 | scene_421 | J03 |
+| A | img_0211 | scene_735 | J02 |
+| B | img_0038, img_0056 | scene_648 | J01 |
+| B | img_0054 | scene_403 | J02 |
+| B | img_0169 | scene_239 | J01 |
+
+Cần báo: người gán A01, A03, A04 và người kiểm Q01, Q03 (người của J01–J03). Điều kiện "có box `tennis racket`" lấy từ `labels/` (lớp 38 trong `classes.txt`); phiên bản guideline lấy theo job, không theo trường `guideline_version` của từng ảnh.
+
 ## 6. Xác minh và giới hạn
 
 Validator và truy vết tái tạo được cùng đầu ra trên seed 11. Lô sạch không có lỗi luật. Sau khi Hoàng Minh Hải xác nhận 3 ảnh nghi lỗi nhãn, 2 ảnh sai hash và ảnh minh họa bảo mật, lô chính thức đạt **17 PASS, 0 FAIL** ở bộ kiểm bàn giao. Điểm đề ẩn chưa có.
