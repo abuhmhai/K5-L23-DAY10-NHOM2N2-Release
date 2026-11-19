@@ -35,3 +35,9 @@ Phiên bản lấy theo `jobs.csv` vì trường guideline trên ảnh có thể
 ## 6. Xác minh và giới hạn
 
 Validator và truy vết tái tạo được cùng đầu ra trên seed 11. Lô sạch không có lỗi luật. Sau khi Hoàng Minh Hải xác nhận 3 ảnh nghi lỗi nhãn, 2 ảnh sai hash và ảnh minh họa bảo mật, lô chính thức đạt **17 PASS, 0 FAIL** ở bộ kiểm bàn giao. Điểm đề ẩn chưa có.
+
+## 7. Kiểm tra phương án cho đề ẩn
+
+Bổ sung ứng viên cho box dịch nhẹ dù tỷ lệ phủ mask còn cao, segment bị bỏ sót cạnh box đã ghép cho đối tượng khác và segment gộp có hai box đè nhau nhưng vẫn có vùng pixel riêng đủ lớn. Khâu đối chiếu bỏ qua crowd. Kiểm lỗi luật về diện tích vẫn đối chiếu pixel đối với segment thing có đánh dấu crowd.
+
+Kết quả trên dữ liệu luyện tập công khai giữ nguyên lỗi luật của seed 11, 22, 33 và 91 so với trước thay đổi. Chấm riêng 33 và 91 cho F1 lỗi luật làm tròn ≈ 1,0. Lô sạch vẫn có 0 lỗi luật, 0 ứng viên. Hồ sơ đã export của seed 11 tái tạo giống hệt. Chưa có số đo trên đề ẩn.

@@ -28,7 +28,7 @@ def write_csv(path, fields, rows):
         writer.writerows(rows)
 
 
-def findings(run, delivery):
+def findings(run, delivery, *, require_complete=True):
     rules = {(row["type"], row["target"]) for row in read_json(run / "rules.json")["errors"]}
     if any(kind not in RULE_TYPES for kind, _ in rules):
         raise ValueError("rules.json chứa loại lỗi ngoài danh sách lỗi luật.")
@@ -38,6 +38,8 @@ def findings(run, delivery):
     reviewed = defaultdict(set)
     for row in read_csv(run / "review_log.csv"):
         name, kind, verdict, note = (row[key].strip() for key in ("image", "type", "verdict", "note"))
+        if not require_complete and not verdict:
+            continue
         if (name not in delivery.items or kind not in SEMANTIC_TYPES
                 or verdict not in {"confirmed", "rejected"} or len(note) < 20):
             raise ValueError(f"Review chưa hoàn chỉnh: {name}. Cần loại, kết luận và ghi chú từ 20 ký tự.")
@@ -46,7 +48,7 @@ def findings(run, delivery):
             rules.add((kind, name))
     missing = [name for name, types in candidates.items()
                if not review_covers(types, reviewed[name])]
-    if missing:
+    if require_complete and missing:
         raise ValueError(f"Chưa chốt review cho {len(missing)} ảnh: {', '.join(sorted(missing)[:8])}")
     return rules
 

@@ -111,6 +111,7 @@ Không. PASS chỉ nói lô v2 **đúng định dạng và nhất quán**: hash,
 | Sản phẩm phải nộp, tên repo | [SUBMISSION.md](SUBMISSION.md) |
 | Định dạng lô, các loại lỗi, format `errors.json` | [docs/DELIVERY.md](docs/DELIVERY.md) |
 | Các script | [scripts/README.md](scripts/README.md) |
+| Lệnh và phân công thời gian cho đề ẩn | [lab_tools/DE_AN.md](lab_tools/DE_AN.md) |
 | Mẫu file phải điền | [templates/](templates/) |
 
 ## Bạn học được gì

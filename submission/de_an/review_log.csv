@@ -1,0 +1,9 @@
+image,type,verdict,note
+img_0046,category_swap,confirmed,"Phụ trách: Lâm Hoài Kim Ngân (@nganlhk).  — Con cừu lông xoăn trắng có sừng cong, rõ là sheep. Detection ghi sheep đúng, panoptic ghi horse là sai."
+img_0065,category_swap,confirmed,"Phụ trách: Lâm Hoài Kim Ngân (@nganlhk).   — Vali mở nắp chứa đầy sách, có khóa kéo viền vali. Detection ghi suitcase đúng, panoptic ghi handbag là sai."
+img_0132,instance_merge,confirmed,"Phụ trách: Đặng Gia Tuấn (@tuandg).  — Mask apple phủ hai cụm táo xanh tách rời nhau (trên và dưới, ngăn bởi lớp cam); detection có 2 box apple, mỗi box chứa ~50% mask."
+img_0168,class_swap,confirmed,"Phụ trách: Nguyễn Thị Hồng Hạnh (@hanhnth).  — Vùng mask là bếp/lò màu đen sau máy xay trên quầy; tủ lạnh trắng nằm bên trái ảnh. Panoptic oven đúng, detection refrigerator sai."
+img_0185,class_swap,confirmed,"Phụ trách: Nguyễn Thị Hồng Hạnh (@hanhnth).  — Người đang cắn bánh vòng phủ đường bóng (glazed donut). Panoptic donut đúng, detection ghi cake là sai."
+img_0226,class_swap,confirmed,"Hoàng Minh Hải (@haihm) xác nhận — Ván lướt sóng trắng dài, mũi nhọn, có vây, cạnh người lướt sóng trên con sóng. Panoptic surfboard đúng, detection ghi frisbee sai."
+img_0237,bbox_drift,confirmed,"Phụ trách: Tạ Ngọc Huyền Trang (@trangtnh).  — Xe ô tô mờ ở nền, sát mép trái ảnh (x=0). Box detection lệch sang phải ~16px, cắt mất phần đầu xe bên trái."
+img_0240,bbox_drift,confirmed,"Phụ trách: Tạ Ngọc Huyền Trang (@trangtnh).  — Ván trượt tuyết chéo dưới chân người nhảy. Box detection tụt xuống ~13px, hụt đầu ván phía trên và dư khoảng trống bên dưới."
